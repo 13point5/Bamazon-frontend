@@ -1,7 +1,6 @@
 import React from "react";
+import Header from "containers/Header";
 
-function App() {
-  return <h1>bamazon</h1>;
+export default function App() {
+  return <Header />;
 }
-
-export default App;

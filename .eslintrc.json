@@ -11,5 +11,9 @@
     "node": true,
     "es6": true
   },
-  "plugins": ["prettier", "react", "react-hooks"]
+  "plugins": ["prettier", "react", "react-hooks"],
+  "rules": {
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "off"
+  }
 }
