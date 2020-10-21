@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React from "react";
 
-import { Row } from "components/Grid";
+import { getGrid } from "components/Grid";
 import {
   Card,
   Title,
@@ -9,6 +9,8 @@ import {
   ChildrenContainer,
   QuadrantCard,
 } from "components/DealCard";
+import { NavLink } from "react-router-dom";
+import routes from "constants/routes";
 
 function DealCard({ deal, children, ...restProps }) {
   return (
@@ -23,43 +25,34 @@ function DealCard({ deal, children, ...restProps }) {
 function SingleDealCard({ deal }) {
   return (
     <DealCard deal={deal}>
-      <img src={deal.imgPath} alt="card" />
+      <NavLink to={deal.extra.to}>
+        <img src={deal.imgPath} alt="card" />
+      </NavLink>
     </DealCard>
   );
 }
 
 function MultiDealCard({ deal }) {
-  return (
-    <DealCard
-      deal={deal}
-      style={{
-        alignSelf: "start",
-        display: "flex",
-        flexDirection: "column",
-        gap: "1rem",
-      }}
-    >
-      <Row>
-        <QuadrantCard>
-          <img src={deal.items[0].imgPath} alt="deal" />
-          <span>{deal.items[0].label}</span>
-        </QuadrantCard>
-        <QuadrantCard>
-          <img src={deal.items[1].imgPath} alt="deal" />
-          <span>{deal.items[1].label}</span>
-        </QuadrantCard>
-      </Row>
+  const getQuadrants = () => {
+    return deal.items.map((item) => (
+      <QuadrantCard key={item.label}>
+        <NavLink to={routes.PRODUCT_LIST}>
+          <img src={item.imgPath} alt={item.label} />
+        </NavLink>
+        <span>{item.label}</span>
+      </QuadrantCard>
+    ));
+  };
 
-      <Row>
-        <QuadrantCard>
-          <img src={deal.items[2].imgPath} alt="deal" />
-          <span>{deal.items[2].label}</span>
-        </QuadrantCard>
-        <QuadrantCard>
-          <img src={deal.items[3].imgPath} alt="deal" />
-          <span>{deal.items[3].label}</span>
-        </QuadrantCard>
-      </Row>
+  return (
+    <DealCard deal={deal}>
+      {getGrid({
+        items: getQuadrants(),
+        colCount: 2,
+        rowProps: {
+          margin: "0 0 1rem 0",
+        },
+      })}
     </DealCard>
   );
 }

@@ -9,6 +9,8 @@ import {
   CartButton,
 } from "components/Header";
 
+import Routes from "constants/routes";
+
 function Header() {
   return (
     <Container>
@@ -17,12 +19,12 @@ function Header() {
 
       <SearchBar />
 
-      <ActionButton to="/">
+      <ActionButton to={Routes.SIGN_IN}>
         <span>Hello, Sign In</span>
         <span>Accounts & Lists</span>
       </ActionButton>
 
-      <CartButton to="/">
+      <CartButton to={Routes.CART}>
         <FontAwesomeIcon icon="shopping-cart" size="2x" />
         <span>5</span>
       </CartButton>

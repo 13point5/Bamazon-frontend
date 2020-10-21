@@ -1,3 +1,5 @@
+import Routes from "constants/routes";
+
 export const dealsData = [
   {
     id: "deal1",
@@ -5,7 +7,7 @@ export const dealsData = [
     title: "Mobiles and accessories | Up to 40% off",
     imgPath: "images/deals/cards/deals_card_1.jpg",
     extra: {
-      to: "/",
+      to: Routes.PRODUCT_LIST,
       label: "See all offers",
     },
   },
@@ -15,7 +17,7 @@ export const dealsData = [
     title: "Up to 60% off | Electronics & accessories",
     imgPath: "images/deals/cards/deals_card_2.jpg",
     extra: {
-      to: "/",
+      to: Routes.PRODUCT_LIST,
       label: "See all offers",
     },
   },
@@ -42,7 +44,7 @@ export const dealsData = [
       },
     ],
     extra: {
-      to: "/",
+      to: Routes.PRODUCT_LIST,
       label: "See all offers",
     },
   },
@@ -69,7 +71,7 @@ export const dealsData = [
       },
     ],
     extra: {
-      to: "/",
+      to: Routes.PRODUCT_LIST,
       label: "See all deals",
     },
   },
@@ -96,7 +98,7 @@ export const dealsData = [
       },
     ],
     extra: {
-      to: "/",
+      to: Routes.PRODUCT_LIST,
       label: "See all deals",
     },
   },
@@ -123,7 +125,7 @@ export const dealsData = [
       },
     ],
     extra: {
-      to: "/",
+      to: Routes.PRODUCT_LIST,
       label: "See all deals",
     },
   },
@@ -150,7 +152,7 @@ export const dealsData = [
       },
     ],
     extra: {
-      to: "/",
+      to: Routes.PRODUCT_LIST,
       label: "See all deals",
     },
   },
@@ -177,7 +179,7 @@ export const dealsData = [
       },
     ],
     extra: {
-      to: "/",
+      to: Routes.PRODUCT_LIST,
       label: "Join Prime",
     },
   },

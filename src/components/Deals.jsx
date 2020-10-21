@@ -15,7 +15,13 @@ export const FeatureImage = styled.img`
 
   z-index: -1;
   margin-bottom: -300px;
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  mask-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 1),
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05)
+  );
 
   @media (max-width: 1300px) {
     margin-bottom: -250px;

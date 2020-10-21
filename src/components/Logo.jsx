@@ -1,7 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+
 import styled from "styled-components/macro";
 import { HeaderAction } from "styles/header";
+
+import Routes from "constants/routes";
 
 const LogoImg = styled.img`
   margin-top: 10px;
@@ -15,7 +18,7 @@ const ImgLink = styled(NavLink)`
 
 export default function Logo() {
   return (
-    <ImgLink to="/">
+    <ImgLink to={Routes.HOME}>
       <LogoImg src="images/logo.png" alt="amazon logo" />
     </ImgLink>
   );

@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components/macro";
 
 export const Row = styled.div`
@@ -7,3 +8,17 @@ export const Row = styled.div`
   padding: ${(props) => props.padding};
   margin: ${(props) => props.margin};
 `;
+
+export const getGrid = ({ items, colCount, rowProps }) => {
+  const gridItems = [];
+  let i = 0;
+
+  for (; i < items.length; i += colCount) {
+    gridItems.push(
+      <Row {...rowProps}>{[...items.slice(i, i + colCount)]}</Row>
+    );
+  }
+  gridItems.push(<Row {...rowProps}>{[...items.slice(i)]}</Row>);
+
+  return gridItems;
+};
