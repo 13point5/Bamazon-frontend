@@ -1,6 +1,11 @@
 import React from "react";
-import Header from "containers/Header";
+import { Header, Deals, MainLayout } from "containers";
 
 export default function App() {
-  return <Header />;
+  return (
+    <MainLayout>
+      <Header />
+      <Deals />
+    </MainLayout>
+  );
 }

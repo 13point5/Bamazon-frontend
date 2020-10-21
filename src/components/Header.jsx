@@ -16,6 +16,8 @@ export const Container = styled.div`
   padding: 0.5rem 1rem;
 
   position: sticky;
+  top: 0;
+  z-index: 100;
 `;
 
 export const MenuIcon = styled(FontAwesomeIcon)`
