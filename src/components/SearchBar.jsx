@@ -1,8 +1,10 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components/macro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import routes from "constants/routes";
 
-const SearchBarContainer = styled.div`
+const SearchBarContainer = styled.form`
   flex-grow: 1;
   display: flex;
 
@@ -38,10 +40,18 @@ const Button = styled.button`
 `;
 
 function SearchBar() {
+  const history = useHistory();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    history.push(routes.PRODUCT_LIST);
+  };
+
   return (
-    <SearchBarContainer>
+    <SearchBarContainer onSubmit={handleSubmit}>
       <Input type="string" />
-      <Button type="button">
+      <Button type="submit">
         <FontAwesomeIcon icon="search" />
       </Button>
     </SearchBarContainer>
