@@ -1,7 +1,7 @@
 import React from "react";
 
-import { productListData } from "fixtures/products";
 import { MainLayout, ProductCard } from "containers";
+import { productListData } from "fixtures/products";
 
 export default function ProductList() {
   return (

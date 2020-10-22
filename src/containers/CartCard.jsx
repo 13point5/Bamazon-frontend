@@ -1,5 +1,4 @@
 /* eslint-disable */
-
 import React from "react";
 
 import {
@@ -10,22 +9,21 @@ import {
   Title,
   OrderCount,
   Price,
-  Delivery,
   ActionGroup,
-  LightText,
-  Button,
+  ButtonGroup,
+  ActionButton,
 } from "components/ProductCard";
 import { Row } from "components/Grid";
 import { Rating } from "components";
 
-export default function ProductCard({ product }) {
+export default function CartCard({ product }) {
   return (
-    <Container>
+    <Container style={{ height: "200px" }}>
       <LeftFrame>
-        <Image src={product.imgPath} alt="product" />
+        <Image height="150px" src={product.imgPath} alt="product" />
       </LeftFrame>
       <DetailsFrame>
-        <Title>{product.name}</Title>
+        <Title style={{ color: "#007185" }}>{product.name}</Title>
 
         <Row>
           <Rating score={product.rating} />{" "}
@@ -34,19 +32,13 @@ export default function ProductCard({ product }) {
 
         <ActionGroup>
           <Price>{product.price}</Price>
-          <LightText>Save extra with No Cost EMI</LightText>
         </ActionGroup>
 
-        <ActionGroup>
-          <LightText>
-            Get it by <Delivery>{product.delivery}</Delivery>
-          </LightText>
-          <LightText>FREE Delivery by Amazon</LightText>
-        </ActionGroup>
-
-        <ActionGroup>
-          <Button type="button">Add to Cart</Button>
-        </ActionGroup>
+        <ButtonGroup>
+          <ActionButton type="button">Delete</ActionButton>
+          <ActionButton type="button">Save for later</ActionButton>
+          <ActionButton type="button">See more like this</ActionButton>
+        </ButtonGroup>
       </DetailsFrame>
     </Container>
   );

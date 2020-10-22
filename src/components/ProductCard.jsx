@@ -11,6 +11,8 @@ export const Container = styled.div`
 
   margin: 20px 0;
   padding: 20px;
+
+  border-top: 1px solid #ddd;
 `;
 
 export const LeftFrame = styled.div`
@@ -72,10 +74,44 @@ export const Delivery = styled.span`
 
 export const Button = styled.button`
   background: #f0c14b;
-  border-color: #a88734 #9c7e31 #846a29;
 
   padding: 10px;
   width: 100px;
 
   font-weight: bold;
+
+  &:hover {
+    background: #a88b40;
+  }
+
+  &:focus,
+  &:active {
+    border: 1px solid black;
+  }
+`;
+
+export const ButtonGroup = styled.div`
+  display: flex;
+  margin-top: 10px;
+`;
+
+export const ActionButton = styled.button`
+color: #0066C0;
+background: none;
+font-size: 12px;
+
+padding: 0 10px;
+border-right: 1px solid #333;
+
+&:hover {
+  color: color: rgb(177, 39, 4);
+}
+
+&:first-child {
+  padding-left: 0;
+}
+
+&:last-child {
+  border-right: none;
+}
 `;

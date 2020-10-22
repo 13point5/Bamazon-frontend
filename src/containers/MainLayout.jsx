@@ -8,9 +8,9 @@ const Container = styled.div`
   flex-direction: column;
 `;
 
-function MainLayout({ children }) {
+function MainLayout({ children, backgroundColor }) {
   return (
-    <Container>
+    <Container style={{ backgroundColor }}>
       <Header />
       {children}
     </Container>

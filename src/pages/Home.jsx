@@ -3,7 +3,7 @@ import { Deals, MainLayout } from "containers";
 
 export default function App() {
   return (
-    <MainLayout>
+    <MainLayout backgroundColor="rgb(234, 237, 237)">
       <Deals />
     </MainLayout>
   );
