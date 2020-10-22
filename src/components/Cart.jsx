@@ -32,21 +32,3 @@ export const Price = styled.span`
   font-size: 20px;
   font-weight: bold;
 `;
-
-export const Button = styled.button`
-  background: #f0c14b;
-
-  padding: 10px;
-  // width: 100px;
-
-  font-weight: bold;
-
-  &:hover {
-    background: #a88b40;
-  }
-
-  &:focus,
-  &:active {
-    border: 1px solid black;
-  }
-`;

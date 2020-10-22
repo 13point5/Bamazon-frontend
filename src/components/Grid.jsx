@@ -15,10 +15,16 @@ export const getGrid = ({ items, colCount, rowProps }) => {
 
   for (; i < items.length; i += colCount) {
     gridItems.push(
-      <Row {...rowProps}>{[...items.slice(i, i + colCount)]}</Row>
+      <Row {...rowProps} key={`row-${i}`}>
+        {[...items.slice(i, i + colCount)]}
+      </Row>
     );
   }
-  gridItems.push(<Row {...rowProps}>{[...items.slice(i)]}</Row>);
+  gridItems.push(
+    <Row key={`row-${i}`} {...rowProps}>
+      {[...items.slice(i)]}
+    </Row>
+  );
 
   return gridItems;
 };

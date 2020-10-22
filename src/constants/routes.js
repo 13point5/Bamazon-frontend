@@ -5,4 +5,5 @@ export default {
   PRODUCT_SINGLE: "/product/:productId",
   CART: "/cart",
   ORDER_PLACED: "/order/placed",
+  PROFILE: "/profile",
 };

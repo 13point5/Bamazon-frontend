@@ -4,17 +4,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Logo, SearchBar } from "components";
 import { Container, ActionButton, CartButton } from "components/Header";
 
+import { useAuth } from "store/selectors/user";
 import Routes from "constants/routes";
 
 function Header() {
+  const user = useAuth();
+
   return (
     <Container>
       <Logo />
 
       <SearchBar />
 
-      <ActionButton to={Routes.SIGN_IN}>
-        <span>Hello, Sign In</span>
+      <ActionButton to={user.name ? Routes.PROFILE : Routes.SIGN_IN}>
+        <span>Hello, {user.name || "Sign In"}</span>
         <span>Accounts & Lists</span>
       </ActionButton>
 

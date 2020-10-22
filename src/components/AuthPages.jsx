@@ -58,25 +58,6 @@ export const FormElement = styled.div`
   }
 `;
 
-export const Button = styled.button`
-  background: #f0c14b;
-
-  padding: 10px;
-  width: 100%;
-  border-radius: 3px;
-
-  font-weight: bold;
-
-  &:hover {
-    background: #a88b40;
-  }
-
-  &:focus,
-  &:active {
-    border: 1px solid black;
-  }
-`;
-
 export const Extra = styled.span`
   font-size: 12px;
   color: grey;

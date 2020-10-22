@@ -6,8 +6,8 @@ import {
   CheckoutFrame,
   CartItemFrame,
   Price,
-  Button,
 } from "components/Cart";
+import { Button } from "components";
 import { NavLink } from "react-router-dom";
 import routes from "constants/routes";
 
@@ -28,7 +28,9 @@ export default function Cart() {
           </span>
 
           <NavLink to={routes.ORDER_PLACED}>
-            <Button type="button">Proceed to Buy</Button>
+            <Button width="100%" type="button">
+              Proceed to Buy
+            </Button>
           </NavLink>
         </CheckoutFrame>
       </Container>

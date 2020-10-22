@@ -26,7 +26,7 @@ export const productListData = [
     })}`,
   },
   {
-    id: "prod2",
+    id: "prod3",
     name: "Samsung Galaxy M31 (Ocean Blue, 6GB RAM, 128GB Storage)",
     rating: 4,
     orderCount: "98,459",
@@ -39,7 +39,7 @@ export const productListData = [
     })}`,
   },
   {
-    id: "prod2",
+    id: "prod4",
     name: "Samsung Galaxy M31 (Ocean Blue, 6GB RAM, 128GB Storage)",
     rating: 4,
     orderCount: "98,459",
@@ -52,7 +52,7 @@ export const productListData = [
     })}`,
   },
   {
-    id: "prod2",
+    id: "prod5",
     name: "Samsung Galaxy M31 (Ocean Blue, 6GB RAM, 128GB Storage)",
     rating: 4,
     orderCount: "98,459",
@@ -65,7 +65,7 @@ export const productListData = [
     })}`,
   },
   {
-    id: "prod2",
+    id: "prod6",
     name: "Samsung Galaxy M31 (Ocean Blue, 6GB RAM, 128GB Storage)",
     rating: 4,
     orderCount: "98,459",
@@ -78,7 +78,7 @@ export const productListData = [
     })}`,
   },
   {
-    id: "prod2",
+    id: "prod7",
     name: "Samsung Galaxy M31 (Ocean Blue, 6GB RAM, 128GB Storage)",
     rating: 4,
     orderCount: "98,459",

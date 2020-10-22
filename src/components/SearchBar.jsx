@@ -42,15 +42,15 @@ const Button = styled.button`
 function SearchBar() {
   const history = useHistory();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
     history.push(routes.PRODUCT_LIST);
   };
 
   return (
     <SearchBarContainer onSubmit={handleSubmit}>
-      <Input type="string" />
+      <Input name="search" type="string" />
       <Button type="submit">
         <FontAwesomeIcon icon="search" />
       </Button>

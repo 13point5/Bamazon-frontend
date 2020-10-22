@@ -13,8 +13,8 @@ import {
   Delivery,
   ActionGroup,
   LightText,
-  Button,
 } from "components/ProductCard";
+import { Button } from "components";
 import { Row } from "components/Grid";
 import { Rating } from "components";
 

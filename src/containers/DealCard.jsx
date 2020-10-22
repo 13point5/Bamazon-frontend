@@ -34,7 +34,7 @@ function SingleDealCard({ deal }) {
 
 function MultiDealCard({ deal }) {
   const getQuadrants = () => {
-    return deal.items.map((item) => (
+    return deal.items.map((item, idx) => (
       <QuadrantCard key={item.label}>
         <NavLink to={routes.PRODUCT_LIST}>
           <img src={item.imgPath} alt={item.label} />
