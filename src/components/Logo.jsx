@@ -19,7 +19,7 @@ const ImgLink = styled(NavLink)`
 export default function Logo() {
   return (
     <ImgLink to={Routes.HOME}>
-      <LogoImg src="images/logo.png" alt="amazon logo" />
+      <LogoImg src="/images/logo.png" alt="amazon logo" />
     </ImgLink>
   );
 }

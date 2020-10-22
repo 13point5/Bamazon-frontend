@@ -5,7 +5,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "lib/fontawesome";
 import "styles/index.css";
 
-import { Home, SignIn, ProductList, ProductSingle, Cart, Error } from "pages";
+import { Home, SignIn, ProductList, Cart, Error } from "pages";
 import Routes from "constants/routes";
 
 ReactDOM.render(
@@ -15,7 +15,6 @@ ReactDOM.render(
         <Route path={Routes.HOME} component={Home} exact />
         <Route path={Routes.SIGN_IN} component={SignIn} exact />
         <Route path={Routes.PRODUCT_LIST} component={ProductList} exact />
-        <Route path={Routes.PRODUCT_SINGLE} component={ProductSingle} exact />
         <Route path={Routes.CART} component={Cart} exact />
         <Route component={Error} />
       </Switch>

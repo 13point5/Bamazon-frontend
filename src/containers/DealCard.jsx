@@ -57,4 +57,6 @@ function MultiDealCard({ deal }) {
   );
 }
 
+export default DealCard;
+
 export { SingleDealCard, MultiDealCard };

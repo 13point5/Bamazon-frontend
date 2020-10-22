@@ -2,19 +2,13 @@ import React from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Logo, SearchBar } from "components";
-import {
-  Container,
-  MenuIcon,
-  ActionButton,
-  CartButton,
-} from "components/Header";
+import { Container, ActionButton, CartButton } from "components/Header";
 
 import Routes from "constants/routes";
 
 function Header() {
   return (
     <Container>
-      <MenuIcon icon="bars" color="white" size="2x" />
       <Logo />
 
       <SearchBar />

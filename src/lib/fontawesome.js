@@ -6,6 +6,7 @@ import {
   faBars,
   faSearch,
   faShoppingCart,
+  faStar,
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faBars, faSearch, faShoppingCart);
+library.add(faBars, faSearch, faShoppingCart, faStar);
