@@ -8,6 +8,8 @@ import {
   Price,
   Button,
 } from "components/Cart";
+import { NavLink } from "react-router-dom";
+import routes from "constants/routes";
 
 export default function Cart() {
   return (
@@ -25,7 +27,9 @@ export default function Cart() {
             Subtotal (3 items): <Price>₹ 17,677.00</Price>
           </span>
 
-          <Button type="button">Proceed to Buy</Button>
+          <NavLink to={routes.ORDER_PLACED}>
+            <Button type="button">Proceed to Buy</Button>
+          </NavLink>
         </CheckoutFrame>
       </Container>
     </MainLayout>
