@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 
 import styled from "styled-components/macro";
@@ -16,10 +17,23 @@ const ImgLink = styled(NavLink)`
   ${HeaderAction}
 `;
 
-export default function Logo() {
+function Logo({ normal }) {
   return (
     <ImgLink to={Routes.HOME}>
-      <LogoImg src="/images/logo.png" alt="amazon logo" />
+      <LogoImg
+        src={normal ? "/images/logo_normal.png" : "/images/logo.png"}
+        alt="amazon logo"
+      />
     </ImgLink>
   );
 }
+
+Logo.defaultProps = {
+  normal: false,
+};
+
+Logo.propTypes = {
+  normal: PropTypes.bool,
+};
+
+export default Logo;

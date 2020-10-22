@@ -7,7 +7,7 @@ import { HeaderAction } from "styles/header";
 
 export const Container = styled.div`
   height: 4rem;
-  background-color: rgb(18, 25, 33);
+  background: rgb(18, 25, 33);
 
   display: flex;
   align-items: center;
