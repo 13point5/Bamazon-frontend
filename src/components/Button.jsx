@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 
 const Button = styled.button`
-  background: #f0c14b;
+  background: ${(props) => (props.color === "secondary" ? "red" : "#f0c14b")};
 
   padding: 10px;
   width: ${(props) => props.width || "fit-content"};

@@ -4,7 +4,7 @@ export const productListData = [
     name: "Samsung Galaxy M31 (Ocean Blue, 6GB RAM, 128GB Storage)",
     rating: 4,
     orderCount: "98,459",
-    price: "₹16,499",
+    price: 16499,
     imgPath: "/images/products/product_1.jpg",
     delivery: `${new Date().toLocaleDateString("en-IN", {
       weekday: "long",
@@ -17,7 +17,7 @@ export const productListData = [
     name: "Samsung Galaxy M31 (Ocean Blue, 6GB RAM, 128GB Storage)",
     rating: 4,
     orderCount: "98,459",
-    price: "₹16,499",
+    price: 16499,
     imgPath: "/images/products/product_2.jpg",
     delivery: `${new Date().toLocaleDateString("en-IN", {
       weekday: "long",
@@ -30,7 +30,7 @@ export const productListData = [
     name: "Samsung Galaxy M31 (Ocean Blue, 6GB RAM, 128GB Storage)",
     rating: 4,
     orderCount: "98,459",
-    price: "₹16,499",
+    price: 16499,
     imgPath: "/images/products/product_3.jpg",
     delivery: `${new Date().toLocaleDateString("en-IN", {
       weekday: "long",
@@ -43,7 +43,7 @@ export const productListData = [
     name: "Samsung Galaxy M31 (Ocean Blue, 6GB RAM, 128GB Storage)",
     rating: 4,
     orderCount: "98,459",
-    price: "₹16,499",
+    price: 16499,
     imgPath: "/images/products/product_4.jpg",
     delivery: `${new Date().toLocaleDateString("en-IN", {
       weekday: "long",
@@ -56,7 +56,7 @@ export const productListData = [
     name: "Samsung Galaxy M31 (Ocean Blue, 6GB RAM, 128GB Storage)",
     rating: 4,
     orderCount: "98,459",
-    price: "₹16,499",
+    price: 16499,
     imgPath: "/images/products/product_5.jpg",
     delivery: `${new Date().toLocaleDateString("en-IN", {
       weekday: "long",
@@ -69,7 +69,7 @@ export const productListData = [
     name: "Samsung Galaxy M31 (Ocean Blue, 6GB RAM, 128GB Storage)",
     rating: 4,
     orderCount: "98,459",
-    price: "₹16,499",
+    price: 16499,
     imgPath: "/images/products/product_6.jpg",
     delivery: `${new Date().toLocaleDateString("en-IN", {
       weekday: "long",
@@ -82,7 +82,7 @@ export const productListData = [
     name: "Samsung Galaxy M31 (Ocean Blue, 6GB RAM, 128GB Storage)",
     rating: 4,
     orderCount: "98,459",
-    price: "₹16,499",
+    price: 16499,
     imgPath: "/images/products/product_7.jpg",
     delivery: `${new Date().toLocaleDateString("en-IN", {
       weekday: "long",

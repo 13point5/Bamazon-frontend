@@ -4,17 +4,29 @@ const initialState = {
   products: [],
 };
 
-const addToCart = (state, payload) => {
+const add = (state, payload) => {
   return {
-    products: [...state.products, payload],
     ...state,
+    products: [...state.products, payload],
+  };
+};
+
+const remove = (state, productId) => {
+  const oldProducts = [...state.products];
+  const newProducts = oldProducts.filter((product) => product !== productId);
+
+  return {
+    ...state,
+    products: newProducts,
   };
 };
 
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.CART_ADD:
-      return addToCart(state);
+      return add(state, action.payload);
+    case actionTypes.CART_REMOVE:
+      return remove(state, action.payload);
     default:
       return state;
   }

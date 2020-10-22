@@ -10,21 +10,38 @@ import {
 import { Button } from "components";
 import { NavLink } from "react-router-dom";
 import routes from "constants/routes";
+import { useCartProducts } from "store/selectors/cart";
+import formatNumber from "utils/formatCurrency";
 
 export default function Cart() {
+  const cartProducts = useCartProducts();
+
+  const renderCart = () => {
+    return cartProducts.map((productId) => {
+      const currProduct = productListData.find((prod) => prod.id === productId);
+      return <CartCard product={currProduct} key={currProduct.id} />;
+    });
+  };
+
+  const getSubtotal = () => {
+    return cartProducts.reduce((acc, currId) => {
+      const currProduct = productListData.find((prod) => prod.id === currId);
+      return acc + currProduct.price;
+    }, 0);
+  };
+
   return (
     <MainLayout>
       <Container>
         <CartItemFrame>
           <h2>Shopping Cart</h2>
-          {productListData.map((product) => (
-            <CartCard product={product} key={product.id} />
-          ))}
+          {renderCart()}
         </CartItemFrame>
 
         <CheckoutFrame>
           <span>
-            Subtotal (3 items): <Price>₹ 17,677.00</Price>
+            Subtotal ({cartProducts.length} items):{" "}
+            <Price>{formatNumber(getSubtotal(), "currency")}</Price>
           </span>
 
           <NavLink to={routes.ORDER_PLACED}>

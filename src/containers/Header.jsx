@@ -5,10 +5,12 @@ import { Logo, SearchBar } from "components";
 import { Container, ActionButton, CartButton } from "components/Header";
 
 import { useAuth } from "store/selectors/user";
+import { useCartProducts } from "store/selectors/cart";
 import Routes from "constants/routes";
 
 function Header() {
   const user = useAuth();
+  const cartProducts = useCartProducts();
 
   return (
     <Container>
@@ -23,7 +25,7 @@ function Header() {
 
       <CartButton to={Routes.CART}>
         <FontAwesomeIcon icon="shopping-cart" size="2x" />
-        <span>5</span>
+        <span>{cartProducts.length}</span>
       </CartButton>
     </Container>
   );

@@ -12,7 +12,11 @@ function Rating({ score }) {
 
     for (let i = 0; i < 5; i += 1) {
       stars.push(
-        <FontAwesomeIcon color="orange" icon={filled > 0 ? "star" : farStar} />
+        <FontAwesomeIcon
+          color="orange"
+          icon={filled > 0 ? "star" : farStar}
+          key={`rating-${i}`}
+        />
       );
       filled -= 1;
     }

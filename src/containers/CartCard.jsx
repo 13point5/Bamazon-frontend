@@ -15,8 +15,13 @@ import {
 } from "components/ProductCard";
 import { Row } from "components/Grid";
 import { Rating } from "components";
+import formatNumber from "utils/formatCurrency";
+import { useDispatch } from "react-redux";
+import * as cartActions from "store/actions/cart";
 
 export default function CartCard({ product }) {
+  const dispatch = useDispatch();
+
   return (
     <Container style={{ height: "200px" }}>
       <LeftFrame>
@@ -26,16 +31,21 @@ export default function CartCard({ product }) {
         <Title style={{ color: "#007185" }}>{product.name}</Title>
 
         <Row>
-          <Rating score={product.rating} />{" "}
+          <Rating score={product.rating} />
           <OrderCount>{product.orderCount}</OrderCount>
         </Row>
 
         <ActionGroup>
-          <Price>{product.price}</Price>
+          <Price>{formatNumber(product.price, "currency")}</Price>
         </ActionGroup>
 
         <ButtonGroup>
-          <ActionButton type="button">Delete</ActionButton>
+          <ActionButton
+            type="button"
+            onClick={() => dispatch(cartActions.remove(product.id))}
+          >
+            Delete
+          </ActionButton>
           <ActionButton type="button">Save for later</ActionButton>
           <ActionButton type="button">See more like this</ActionButton>
         </ButtonGroup>
