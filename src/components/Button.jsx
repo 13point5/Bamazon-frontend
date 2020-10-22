@@ -1,16 +1,24 @@
 import styled from "styled-components/macro";
+import colors from "styles/colors";
+
+const { btn } = colors;
+
+const getColor = (color, layer) =>
+  color ? `${btn[color].normal[layer]}` : `${btn.primary.normal[layer]}`;
 
 const Button = styled.button`
-  background: ${(props) => (props.color === "secondary" ? "red" : "#f0c14b")};
+  color: ${({ color }) => `${getColor(color, "fg")}`};
+  background: ${({ color }) => `${getColor(color, "bg")}`};
 
   padding: 10px;
-  width: ${(props) => props.width || "fit-content"};
+  width: ${({ width }) => width || "fit-content"};
   border-radius: 3px;
 
   font-weight: bold;
 
-  &:hover {
-    background: #a88b40;
+  &:hover,
+  &:disabled {
+    background: ${({ color }) => `${getColor(color, "bg")}`};
   }
 
   &:focus,
@@ -18,8 +26,7 @@ const Button = styled.button`
     border: 1px solid black;
   }
 
-  :disabled {
-    background: #a88b40;
+  &:disabled {
     pointer-events: none;
   }
 `;
