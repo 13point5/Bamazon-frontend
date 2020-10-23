@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { productListData } from "fixtures/products";
 import { CartCard } from "containers";
 import {
@@ -16,31 +16,45 @@ import formatNumber from "utils/formatCurrency";
 export default function Cart() {
   const cartProducts = useCartProducts();
 
-  const renderCart = () => {
-    return cartProducts.map((productId) => {
+  const [cartItems, setCartItems] = useState([]);
+  const [subTotal, setSubTotal] = useState(0);
+
+  const setCartVars = () => {
+    const newCartItems = [];
+    let newSubTotal = 0;
+
+    cartProducts.forEach((productId) => {
+      // get product details
       const currProduct = productListData.find((prod) => prod.id === productId);
-      return <CartCard product={currProduct} key={currProduct.id} />;
+
+      // add cartItem card
+      newCartItems.push(
+        <CartCard product={currProduct} key={currProduct.id} />
+      );
+
+      // add price to subTotal
+      newSubTotal += currProduct.price;
     });
+
+    setCartItems(newCartItems);
+    setSubTotal(newSubTotal);
   };
 
-  const getSubtotal = () => {
-    return cartProducts.reduce((acc, currId) => {
-      const currProduct = productListData.find((prod) => prod.id === currId);
-      return acc + currProduct.price;
-    }, 0);
-  };
+  useEffect(() => {
+    setCartVars();
+  }, [cartProducts]);
 
   return (
     <Container>
       <CartItemFrame>
         <h2>Shopping Cart</h2>
-        {renderCart()}
+        {cartItems}
       </CartItemFrame>
 
       <CheckoutFrame>
         <span>
           Subtotal ({cartProducts.length} items):{" "}
-          <Price>{formatNumber(getSubtotal(), "currency")}</Price>
+          <Price>{formatNumber(subTotal, "currency")}</Price>
         </span>
 
         <NavLink to={Routes.ORDER_PLACED}>
