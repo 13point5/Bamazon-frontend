@@ -1,6 +1,6 @@
 import React from "react";
 import { productListData } from "fixtures/products";
-import { MainLayout, CartCard } from "containers";
+import { CartCard } from "containers";
 import {
   Container,
   CheckoutFrame,
@@ -31,26 +31,24 @@ export default function Cart() {
   };
 
   return (
-    <MainLayout>
-      <Container>
-        <CartItemFrame>
-          <h2>Shopping Cart</h2>
-          {renderCart()}
-        </CartItemFrame>
+    <Container>
+      <CartItemFrame>
+        <h2>Shopping Cart</h2>
+        {renderCart()}
+      </CartItemFrame>
 
-        <CheckoutFrame>
-          <span>
-            Subtotal ({cartProducts.length} items):{" "}
-            <Price>{formatNumber(getSubtotal(), "currency")}</Price>
-          </span>
+      <CheckoutFrame>
+        <span>
+          Subtotal ({cartProducts.length} items):{" "}
+          <Price>{formatNumber(getSubtotal(), "currency")}</Price>
+        </span>
 
-          <NavLink to={routes.ORDER_PLACED}>
-            <Button width="100%" type="button">
-              Proceed to Buy
-            </Button>
-          </NavLink>
-        </CheckoutFrame>
-      </Container>
-    </MainLayout>
+        <NavLink to={routes.ORDER_PLACED}>
+          <Button width="100%" type="button">
+            Proceed to Buy
+          </Button>
+        </NavLink>
+      </CheckoutFrame>
+    </Container>
   );
 }

@@ -1,5 +1,4 @@
 import React from "react";
-import { MainLayout } from "containers";
 import styled from "styled-components";
 
 const Message = styled.h1`
@@ -8,9 +7,5 @@ const Message = styled.h1`
 `;
 
 export default function App() {
-  return (
-    <MainLayout>
-      <Message>Your Order has been placed !</Message>
-    </MainLayout>
-  );
+  return <Message>Your Order has been placed !</Message>;
 }

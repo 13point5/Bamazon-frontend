@@ -12,6 +12,9 @@ function Header() {
   const user = useAuth();
   const cartProducts = useCartProducts();
 
+  // check render
+  // console.log("header");
+
   return (
     <Container>
       <Logo />
@@ -31,4 +34,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default React.memo(Header);

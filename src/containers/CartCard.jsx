@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React from "react";
+import React, { useCallback } from "react";
 
 import {
   Container,
@@ -22,6 +22,10 @@ import * as cartActions from "store/actions/cart";
 export default function CartCard({ product }) {
   const dispatch = useDispatch();
 
+  const removeFromCart = useCallback(() => {
+    dispatch(cartActions.remove(product.id));
+  });
+
   return (
     <Container style={{ height: "200px" }}>
       <LeftFrame>
@@ -40,10 +44,7 @@ export default function CartCard({ product }) {
         </ActionGroup>
 
         <ButtonGroup>
-          <ActionButton
-            type="button"
-            onClick={() => dispatch(cartActions.remove(product.id))}
-          >
+          <ActionButton type="button" onClick={removeFromCart}>
             Delete
           </ActionButton>
           <ActionButton type="button">Save for later</ActionButton>

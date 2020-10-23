@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import React from "react";
+import React, { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import {
@@ -31,13 +31,13 @@ export default function ProductCard({ product }) {
     cartProducts.find((item) => item === product.id)
   );
 
-  const addToCart = () => {
+  const addToCart = useCallback(() => {
     dispatch(cartActions.add(product.id));
-  };
+  });
 
-  const removeFromCart = () => {
+  const removeFromCart = useCallback(() => {
     dispatch(cartActions.remove(product.id));
-  };
+  });
 
   return (
     <Container>

@@ -20,6 +20,7 @@ import {
 import Routes from "constants/routes";
 import { persistor, store } from "store";
 import ProtectedRoute from "components/ProtectedRoute";
+import { MainLayout } from "containers";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -27,16 +28,21 @@ ReactDOM.render(
       <PersistGate persistor={persistor}>
         <BrowserRouter>
           <Switch>
-            <Route path={Routes.HOME} component={Home} exact />
             <Route path={Routes.SIGN_IN} component={SignIn} exact />
-            <Route path={Routes.PRODUCT_LIST} component={ProductList} exact />
-            <Route path={Routes.CART} component={Cart} exact />
-            <ProtectedRoute
-              path={Routes.ORDER_PLACED}
-              component={OrderPlaced}
-              exact
-            />
-            <ProtectedRoute path={Routes.PROFILE} component={Profile} exact />
+            <Route path={Routes.HOME} component={Home} exact />
+
+            {/* avoid re-render of Header */}
+            <MainLayout>
+              <Route path={Routes.PRODUCT_LIST} component={ProductList} exact />
+              <Route path={Routes.CART} component={Cart} exact />
+              <ProtectedRoute
+                path={Routes.ORDER_PLACED}
+                component={OrderPlaced}
+                exact
+              />
+              <ProtectedRoute path={Routes.PROFILE} component={Profile} exact />
+            </MainLayout>
+
             <Route component={Error} />
           </Switch>
         </BrowserRouter>
