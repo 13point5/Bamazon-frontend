@@ -21,6 +21,11 @@ const colors = {
       },
     },
   },
+  grey: {
+    sm: "rgb(221, 221, 221)",
+    md: "rgb(187, 187, 187)",
+    lg: "rgb(242, 242, 242)",
+  },
 };
 
 export default colors;

@@ -1,4 +1,7 @@
 import styled from "styled-components/macro";
+import colors from "styles/colors";
+
+const { grey } = colors;
 
 export const Layout = styled.div`
   width: 100%;
@@ -11,7 +14,7 @@ export const Layout = styled.div`
 
 export const FormCard = styled.div`
   margin-top: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid ${grey.sm};
   border-radius: 3px;
 
   padding: 1rem 2rem;
@@ -43,7 +46,7 @@ export const FormElement = styled.div`
 
   input {
     margin-top: 5px;
-    border: 1px solid #bbb;
+    border: 1px solid ${grey.md};
     border-radius: 3px;
     padding: 7px 10px;
     width: 100%;

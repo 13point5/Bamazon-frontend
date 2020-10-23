@@ -1,4 +1,7 @@
 import styled from "styled-components/macro";
+import colors from "styles/colors";
+
+const { grey } = colors;
 
 export const Container = styled.div`
   max-width: 80%;
@@ -11,9 +14,9 @@ export const CartItemFrame = styled.div``;
 
 export const CheckoutFrame = styled.div`
   border-radius: 10px;
-  border: 1px solid #dddddd;
+  border: 1px solid ${grey.sm};
 
-  background-color: #f3f3f3;
+  background-color: ${grey.lg};
 
   height: fit-content;
 

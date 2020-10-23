@@ -1,5 +1,6 @@
-import styled from "styled-components/macro";
 import { NavLink } from "react-router-dom";
+import styled from "styled-components/macro";
+import colors from "styles/colors";
 
 export const Container = styled.div`
   background: white;
@@ -12,7 +13,7 @@ export const Container = styled.div`
   margin: 20px 0;
   padding: 20px;
 
-  border-top: 1px solid #ddd;
+  border-top: 1px solid ${colors.grey.sm};
 `;
 
 export const LeftFrame = styled.div`
@@ -50,7 +51,7 @@ export const Link = styled(NavLink)`
   color: black;
 
   &:hover {
-    color: rgb(177, 39, 4);
+    color: ${colors.btn.secondary.normal.bg};
   }
 `;
 
@@ -63,7 +64,7 @@ export const OrderCount = styled.span`
 `;
 
 export const Price = styled.span`
-  color: rgb(177, 39, 4);
+  color: ${colors.btn.secondary.normal.bg};
   font-size: 21px;
   font-weight: 400;
 `;
@@ -73,7 +74,7 @@ export const Delivery = styled.span`
 `;
 
 export const Button = styled.button`
-  background: #f0c14b;
+  background: ${colors.btn.primary.normal.bg};
 
   padding: 10px;
   width: 100px;
@@ -81,7 +82,7 @@ export const Button = styled.button`
   font-weight: bold;
 
   &:hover {
-    background: #a88b40;
+    background: ${colors.btn.primary.hover.bg};
   }
 
   &:focus,
@@ -104,7 +105,7 @@ padding: 0 10px;
 border-right: 1px solid #333;
 
 &:hover {
-  color: color: rgb(177, 39, 4);
+  color: color: ${colors.btn.secondary.normal.bg};
 }
 
 &:first-child {
