@@ -10,7 +10,7 @@ import Routes from "constants/Routes";
 
 function Header() {
   const user = useAuth();
-  const cartProducts = useCartProducts();
+  const { cartProducts } = useCartProducts();
 
   // check render
   // console.log("header");
