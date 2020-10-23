@@ -17,7 +17,7 @@ import {
   Error,
 } from "pages";
 
-import Routes from "constants/routes";
+import Routes from "constants/Routes";
 import { persistor, store } from "store";
 import ProtectedRoute from "components/ProtectedRoute";
 import { MainLayout } from "containers";

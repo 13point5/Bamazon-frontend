@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components/macro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import routes from "constants/routes";
+import Routes from "constants/Routes";
 
 const SearchBarContainer = styled.form`
   flex-grow: 1;
@@ -45,7 +45,7 @@ function SearchBar() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    history.push(routes.PRODUCT_LIST);
+    history.push(Routes.PRODUCT_LIST);
   };
 
   return (

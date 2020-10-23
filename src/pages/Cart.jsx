@@ -9,7 +9,7 @@ import {
 } from "components/Cart";
 import { Button } from "components";
 import { NavLink } from "react-router-dom";
-import routes from "constants/routes";
+import Routes from "constants/Routes";
 import { useCartProducts } from "store/selectors/cart";
 import formatNumber from "utils/formatCurrency";
 
@@ -43,7 +43,7 @@ export default function Cart() {
           <Price>{formatNumber(getSubtotal(), "currency")}</Price>
         </span>
 
-        <NavLink to={routes.ORDER_PLACED}>
+        <NavLink to={Routes.ORDER_PLACED}>
           <Button width="100%" type="button">
             Proceed to Buy
           </Button>

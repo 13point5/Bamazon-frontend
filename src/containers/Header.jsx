@@ -6,7 +6,7 @@ import { Container, ActionButton, CartButton } from "components/Header";
 
 import { useAuth } from "store/selectors/user";
 import { useCartProducts } from "store/selectors/cart";
-import Routes from "constants/routes";
+import Routes from "constants/Routes";
 
 function Header() {
   const user = useAuth();

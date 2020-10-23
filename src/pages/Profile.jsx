@@ -4,7 +4,7 @@ import { useAuth } from "store/selectors/user";
 import { Button } from "components";
 import { useDispatch } from "react-redux";
 import * as actionTypes from "store/actionTypes";
-import routes from "constants/routes";
+import Routes from "constants/Routes";
 
 export default function ProfilePage() {
   const dispatch = useDispatch();
@@ -15,7 +15,7 @@ export default function ProfilePage() {
     dispatch({
       type: actionTypes.SIGN_OUT,
     });
-    history.push(routes.HOME);
+    history.push(Routes.HOME);
   };
 
   return (

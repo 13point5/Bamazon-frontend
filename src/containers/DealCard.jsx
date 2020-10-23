@@ -10,7 +10,7 @@ import {
   QuadrantCard,
 } from "components/DealCard";
 import { NavLink } from "react-router-dom";
-import routes from "constants/routes";
+import Routes from "constants/Routes";
 
 function DealCard({ deal, children, ...restProps }) {
   return (
@@ -36,7 +36,7 @@ function MultiDealCard({ deal }) {
   const getQuadrants = () => {
     return deal.items.map((item, idx) => (
       <QuadrantCard key={item.label}>
-        <NavLink to={routes.PRODUCT_LIST}>
+        <NavLink to={Routes.PRODUCT_LIST}>
           <img src={item.imgPath} alt={item.label} />
         </NavLink>
         <span>{item.label}</span>

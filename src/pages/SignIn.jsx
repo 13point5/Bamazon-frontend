@@ -14,7 +14,7 @@ import {
 import Logo from "components/Logo";
 
 import * as userActions from "store/actions/user";
-import routes from "constants/routes";
+import Routes from "constants/Routes";
 import { useIsMounted } from "hooks";
 
 export default function SignIn() {
@@ -31,7 +31,7 @@ export default function SignIn() {
 
     dispatch(userActions.signIn())
       .then(() => {
-        history.push(routes.HOME);
+        history.push(Routes.HOME);
       })
       .finally(() => {
         if (isMounted) setLoading(false);

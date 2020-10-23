@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components/macro";
 import { HeaderAction } from "styles/header";
 
-import Routes from "constants/routes";
+import Routes from "constants/Routes";
 
 const LogoImg = styled.img`
   margin-top: 10px;
