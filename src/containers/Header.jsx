@@ -5,12 +5,12 @@ import { Logo, SearchBar } from "components";
 import { Container, ActionButton, CartButton } from "components/Header";
 
 import { useAuth } from "store/selectors/user";
-import { useCartProducts } from "store/selectors/cart";
+import { useCartCount } from "store/selectors/cart";
 import Routes from "constants/Routes";
 
 function Header() {
   const user = useAuth();
-  const { cartProducts } = useCartProducts();
+  const cartCount = useCartCount();
 
   // check render
   // console.log("header");
@@ -28,7 +28,7 @@ function Header() {
 
       <CartButton to={Routes.CART}>
         <FontAwesomeIcon icon="shopping-cart" size="2x" />
-        <span>{cartProducts.length}</span>
+        <span>{cartCount}</span>
       </CartButton>
     </Container>
   );

@@ -3,6 +3,7 @@
 import React, { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import LazyLoad from "react-lazyload";
 import {
   Container,
   Image,
@@ -19,31 +20,38 @@ import { Row } from "components/Grid";
 import { Button, Rating } from "components";
 
 import * as cartActions from "store/actions/cart";
-import { useCartProducts } from "store/selectors/cart";
+import { useIsCartProduct } from "store/selectors/cart";
 import formatNumber from "utils/formatCurrency";
+
+const ImgFrame = React.memo(({ product }) => {
+  return (
+    <LeftFrame>
+      <LazyLoad height={100} once>
+        <Image src={product.imgPath} alt="product" />
+      </LazyLoad>
+    </LeftFrame>
+  );
+});
 
 export default function ProductCard({ product }) {
   const dispatch = useDispatch();
 
-  const cartProducts = useCartProducts();
-
-  const isCartProduct = Boolean(
-    cartProducts.find((item) => item === product.id)
+  const isCartProduct = useSelector((store) =>
+    useIsCartProduct(store, product.id)
   );
 
   const addToCart = useCallback(() => {
     dispatch(cartActions.add(product.id));
-  });
+  }, []);
 
   const removeFromCart = useCallback(() => {
     dispatch(cartActions.remove(product.id));
-  });
+  }, []);
 
   return (
     <Container>
-      <LeftFrame>
-        <Image src={product.imgPath} alt="product" />
-      </LeftFrame>
+      <ImgFrame product={product} />
+
       <DetailsFrame>
         <Title>{product.name}</Title>
 
