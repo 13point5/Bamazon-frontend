@@ -1,7 +1,6 @@
-/* eslint-disable */
-
 import React, { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import PropTypes from "prop-types";
 
 import LazyLoad from "react-lazyload";
 import {
@@ -20,37 +19,42 @@ import { Row } from "components/Grid";
 import { Button, Rating } from "components";
 
 import * as cartActions from "store/actions/cart";
-import { useIsCartProduct } from "store/selectors/cart";
+import { isCartProductSelector } from "store/selectors/cart";
+import ProductCardPropTypes from "propTypes/ProductCard";
 import formatNumber from "utils/formatCurrency";
 
-const ImgFrame = React.memo(({ product }) => {
+const ImgFrame = React.memo(({ src }) => {
   return (
     <LeftFrame>
       <LazyLoad height={100} once>
-        <Image src={product.imgPath} alt="product" />
+        <Image src={src} alt="product" />
       </LazyLoad>
     </LeftFrame>
   );
 });
 
-export default function ProductCard({ product }) {
+ImgFrame.propTypes = {
+  src: PropTypes.string.isRequired,
+};
+
+function ProductCard({ product }) {
   const dispatch = useDispatch();
 
   const isCartProduct = useSelector((store) =>
-    useIsCartProduct(store, product.id)
+    isCartProductSelector(store, product.id)
   );
 
   const addToCart = useCallback(() => {
     dispatch(cartActions.add(product.id));
-  }, []);
+  }, [dispatch, product.id]);
 
   const removeFromCart = useCallback(() => {
     dispatch(cartActions.remove(product.id));
-  }, []);
+  }, [dispatch, product.id]);
 
   return (
     <Container>
-      <ImgFrame product={product} />
+      <ImgFrame src={product.imgPath} />
 
       <DetailsFrame>
         <Title>{product.name}</Title>
@@ -85,3 +89,9 @@ export default function ProductCard({ product }) {
     </Container>
   );
 }
+
+ProductCard.propTypes = {
+  product: ProductCardPropTypes.isRequired,
+};
+
+export default ProductCard;

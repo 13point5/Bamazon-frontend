@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { useCallback } from "react";
 
 import {
@@ -18,13 +17,14 @@ import { Rating } from "components";
 import formatNumber from "utils/formatCurrency";
 import { useDispatch } from "react-redux";
 import * as cartActions from "store/actions/cart";
+import ProductCardPropTypes from "propTypes/ProductCard";
 
-export default function CartCard({ product }) {
+function CartCard({ product }) {
   const dispatch = useDispatch();
 
   const removeFromCart = useCallback(() => {
     dispatch(cartActions.remove(product.id));
-  });
+  }, [dispatch, product.id]);
 
   return (
     <Container style={{ height: "200px" }}>
@@ -54,3 +54,9 @@ export default function CartCard({ product }) {
     </Container>
   );
 }
+
+CartCard.propTypes = {
+  product: ProductCardPropTypes.isRequired,
+};
+
+export default CartCard;

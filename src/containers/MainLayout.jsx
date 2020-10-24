@@ -1,6 +1,7 @@
-/* eslint-disable */
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components/macro";
+import ChildrenPropTypes from "propTypes/Children";
 import { Header } from "containers";
 
 const Container = styled.div`
@@ -16,5 +17,14 @@ function MainLayout({ children, backgroundColor }) {
     </Container>
   );
 }
+
+MainLayout.defaultProps = {
+  backgroundColor: "white",
+};
+
+MainLayout.propTypes = {
+  children: ChildrenPropTypes.isRequired,
+  backgroundColor: PropTypes.string,
+};
 
 export default MainLayout;

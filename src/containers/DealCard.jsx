@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from "react";
 
 import { getGrid } from "components/Grid";
@@ -11,16 +10,23 @@ import {
 } from "components/DealCard";
 import { NavLink } from "react-router-dom";
 import Routes from "constants/Routes";
+import DealPropTypes from "propTypes/Deal";
+import ChildrenPropTypes from "propTypes/Children";
 
-function DealCard({ deal, children, ...restProps }) {
+function DealCard({ deal, children }) {
   return (
     <Card>
       <Title>{deal.title}</Title>
-      <ChildrenContainer {...restProps}>{children}</ChildrenContainer>
+      <ChildrenContainer>{children}</ChildrenContainer>
       <Extra to={deal.extra.to}>{deal.extra.label}</Extra>
     </Card>
   );
 }
+
+DealCard.propTypes = {
+  deal: DealPropTypes.isRequired,
+  children: ChildrenPropTypes.isRequired,
+};
 
 function SingleDealCard({ deal }) {
   return (
@@ -32,9 +38,13 @@ function SingleDealCard({ deal }) {
   );
 }
 
+SingleDealCard.propTypes = {
+  deal: DealPropTypes.isRequired,
+};
+
 function MultiDealCard({ deal }) {
   const getQuadrants = () => {
-    return deal.items.map((item, idx) => (
+    return deal.items.map((item) => (
       <QuadrantCard key={item.label}>
         <NavLink to={Routes.PRODUCT_LIST}>
           <img src={item.imgPath} alt={item.label} />
@@ -56,6 +66,10 @@ function MultiDealCard({ deal }) {
     </DealCard>
   );
 }
+
+MultiDealCard.propTypes = {
+  deal: DealPropTypes.isRequired,
+};
 
 export default DealCard;
 
